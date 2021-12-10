@@ -10,6 +10,7 @@ class BunnyStorageException(BaseException):
         super().__init__(message)
         self.message = message
 
+        
 class BunnyStorage(Storage):
     """
     Implementation of Django's storage module using Bunny.net. 

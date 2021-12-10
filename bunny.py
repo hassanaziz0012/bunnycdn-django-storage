@@ -1,8 +1,14 @@
 from django.core.files import File
 from django.core.files.storage import Storage
-from products.utils.Exceptions import BunnyStorageException
 import requests
 
+
+class BunnyStorageException(BaseException):
+    """This exception will be raised when an error occurs in the BunnyStorage class."""
+    
+    def __init__(self, message) -> None:
+        super().__init__(message)
+        self.message = message
 
 class BunnyStorage(Storage):
     """
